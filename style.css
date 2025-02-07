@@ -1,0 +1,110 @@
+body{
+    background-color: magenta;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    /* height: 1300px; */
+    background-image: url(images/bk2.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+}
+.conatainer{
+   
+    width: 410px;
+    height: 410px;
+    
+}
+.game{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    
+    
+}
+.box{
+    box-shadow: 0 0  5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: 10px;
+    box-shadow: 0 0 10px rgb(83, 82, 82);
+    font-size: 50px;
+    height: 120px;
+    width: 120px;
+    cursor: pointer;
+    color: red;
+    background-color: lightgoldenrodyellow;
+    
+}
+main h1{
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.reset{
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 0 ;
+    background-color: green;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+.win2{
+    height: 600px;
+    padding-top: 50px;
+}
+.winner{
+    font-size: 50px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    color: orange;
+    font-weight: bold;
+}
+.cong{
+    color: orange;
+    font-weight: bold;
+    font-size: 50px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.ng{
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+.hide{
+    display: none;
+}
+
+.insta{
+  position: fixed;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.insta {
+  top: 8px;
+  left: 20px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+
+/* For improved accessibility on mobile */
+
+.win2{
+    background-color:darkblue;
+    border-radius: 20px;
+}
