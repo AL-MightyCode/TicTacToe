@@ -92,9 +92,6 @@ main h1{
   position: fixed;
   z-index: 5;
   transition: all 0.3s ease;
-}
-
-.insta {
   top: 8px;
   left: 20px;
   width: 50px;
