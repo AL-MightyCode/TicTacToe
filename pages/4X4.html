@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4x4 Tic Tac Toe</title>
+    <style>
+        body {
+            background-color: magenta;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-image: url(images/bk2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90vw;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .game {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .box {
+            box-shadow: 0 0 5px;
+            border-radius: 10px;
+            font-size: clamp(16px, 5vw, 40px);
+            height: clamp(50px, 12vw, 100px);
+            width: clamp(50px, 12vw, 100px);
+            cursor: pointer;
+            color: red;
+            background-color: lightgoldenrodyellow;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: clamp(20px, 6vw, 40px);
+        }
+
+        .reset, .ng {
+            padding: 10px 15px;
+            border-radius: 10px;
+            border: 0;
+            background-color: green;
+            color: white;
+            font-size: clamp(14px, 4vw, 20px);
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .win2 {
+            height: auto;
+            padding: 20px;
+            background-color: darkblue;
+            border-radius: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .winner, .cong {
+            font-size: clamp(20px, 6vw, 50px);
+            color: orange;
+            font-weight: bold;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="win2 hide">
+            <p class="cong">Congratulations!</p>
+            <p class="winner"></p>
+            <button class="ng">New Game</button>
+        </div>
+        <h1>4x4 Tic Tac Toe</h1>
+        <div class="container">
+            <div class="game">
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+                <button class="box"></button>
+            </div>
+            <button class="reset">Reset</button>
+        </div>
+        <script src="../4x4.js"></script>
+    </main>
+</body>
+</html>
