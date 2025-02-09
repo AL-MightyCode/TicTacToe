@@ -4,7 +4,6 @@ let winnergame = document.querySelector(".winner");
 let win2 = document.querySelector(".win2");
 let ng = document.querySelector(".ng");
 let turnO = true; // Player's turn
-let gameOver = false; // Track if game is over
 
 const wins = [
     [0, 1, 2], [0, 3, 6], [0, 4, 8],
@@ -14,27 +13,24 @@ const wins = [
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
-        if (turnO && !gameOver) {
+        if (turnO) {
             box.innerText = "O";
             box.disabled = true;
             turnO = false;
-            if (checkWinner()) return; // Stop game if someone won
-            setTimeout(computerMove, 500); // Computer move after delay
+            if (!winner()) {
+                setTimeout(computerMove, 300); // Faster response
+            }
         }
     });
 });
 
 const computerMove = () => {
-    if (gameOver) return; // Stop if game is already over
-
-    let availableBoxes = Array.from(boxes).filter(box => box.innerText === "");
-    if (availableBoxes.length > 0) {
-        let bestMove = (Math.random() * 100 < 80) ? findBestMove() : findRandomMove();
-        boxes[bestMove].innerText = "X";
-        boxes[bestMove].disabled = true;
-        turnO = true;
-        checkWinner(); // Check if computer won
-    }
+    let chance = Math.random();
+    let bestMove = (chance < 0.85) ? findBestMove() : findRandomMove(); // Allow some user wins
+    boxes[bestMove].innerText = "X";
+    boxes[bestMove].disabled = true;
+    turnO = true;
+    winner();
 };
 
 const findBestMove = () => {
@@ -49,7 +45,14 @@ const findBestMove = () => {
             return pattern[values.indexOf("")];
         }
     }
-    return findRandomMove();
+    
+    if (boxes[4].innerText === "") return 4; // Prioritize center
+    
+    let corners = [0, 2, 6, 8].filter(i => boxes[i].innerText === "");
+    if (corners.length > 0) return corners[Math.floor(Math.random() * corners.length)];
+    
+    let edges = [1, 3, 5, 7].filter(i => boxes[i].innerText === "");
+    return edges[Math.floor(Math.random() * edges.length)];
 };
 
 const findRandomMove = () => {
@@ -57,13 +60,16 @@ const findRandomMove = () => {
     return availableBoxes[Math.floor(Math.random() * availableBoxes.length)];
 };
 
-const winnergame1 = (winner) => {
-    gameOver = true; // Stop further moves
-    winnergame.innerHTML = (winner === "O") ? "You Win!" : "You Lose!";
+const winnergame1 = (posval1) => {
+    if (posval1 === "O") {
+        winnergame.innerHTML = "You Win!";
+    } else if (posval1 === "X") {
+        winnergame.innerHTML = "You Lose!";
+    }
     win2.classList.remove("hide");
 };
 
-const checkWinner = () => {
+const winner = () => {
     for (let pattern of wins) {
         let posval1 = boxes[pattern[0]].innerText;
         let posval2 = boxes[pattern[1]].innerText;
@@ -72,16 +78,15 @@ const checkWinner = () => {
         if (posval1 !== "" && posval1 === posval2 && posval2 === posval3) {
             winnergame1(posval1);
             boxes.forEach(box => box.disabled = true);
-            return true; // Return true if there's a winner
+            return true;
         }
     }
     if ([...boxes].every(box => box.innerText !== "")) {
         winnergame.innerHTML = "It's a Tie!";
         win2.classList.remove("hide");
-        gameOver = true;
         return true;
     }
-    return false; // No winner yet
+    return false;
 };
 
 const refresh = () => location.reload();
