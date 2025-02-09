@@ -2,46 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-   
-    <link rel="canonical" href="https://tictactoe-rqni.onrender.com/" />
-
-
-    <meta name="google-site-verification" content="haW-eGW2nSaHdEPe3qy2iFi7aKFfkWfVZCJMipj4qJE" />
-
-    <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-        <link  rel="icon" type="image/x-icon" href="images/icon.jpg">
-</head>
-
-
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1956554418238347"
-     crossorigin="anonymous"></script>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9B67LDJYC6"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-9B67LDJYC6');
-    </script>
-
-    
-    <title>Play Tic-Tac-Toe Online | User vs AI or Friends</title>
-    <meta name="description" content="Enjoy Tic-Tac-Toe online! Play against friends in User vs User mode or challenge AI in a smart Tic-Tac-Toe game. No download required!">
-    <meta name="keywords" content="Tic Tac Toe, Play Tic Tac Toe, Online Tic Tac Toe, Tic Tac Toe AI, Multiplayer Tic Tac Toe">
-    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <style>
     body{
     background-color: magenta;
     display: flex;
+    flex-direction: row;
     text-align: center;
     justify-content: center;
-    margin-top: 210px;
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-image: url(images/bk2.jpg);
     background-repeat: no-repeat;
@@ -49,9 +19,11 @@
     background-attachment: fixed;
     }
     main{
+        
+        gap: 20px;
         display: flex;
-        justify-content: space-between;
-        column-gap: 40px;
+        margin-top: 200px;
+        
         
     }
     .comp{
@@ -83,32 +55,52 @@
     main a{
         text-decoration: none;
     }
-    .insta{
-      position: fixed;
-      z-index: 5;
-      transition: all 0.3s ease;
-      top: 8px;
-      left: 20px;
-      width: 50px;
-      border-radius: 50px;
+    .insta {
+    top: 8px;
+    left: 20px;
+    width: 50px;
+    border-radius: 50px;
+    position: fixed;
+    z-index: 5;
+    transition: all 0.3s ease;
 }
-
+.comp4x4{
+    width: 200px;
+    border-radius: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+            main {
+                flex-direction: column;
+                margin-top: 0px;
+            }
+        }
 </style>
+
+<link  rel="icon" type="image/x-icon" href="images/icon.jpg">
+
 <body>
     <a href="https://www.instagram.com/m_u_s_h_e_e_r_/" target="_blank">
         <img class="insta" src="images/insta.jpg" alt="@m_u_s_h_e_e_r_">
-      </a>
+    </a>
     <main>
-        <a href="pages/indexuser.html">
+        <a class="1" href="pages/indexuser.html">
             <div class="uservsuser">
                 <img class="user" src="images/user.png" alt="user vs user">
                 <p>User VS User</p>
             </div>
         </a>
-        <a href="pages/indexcomp.html">
+        <a class="2" href="pages/indexcomp.html">
             <div class="compvsuser">
                 <img class="comp" src="images/computer.png" alt="user vs user">
                 <p>Computer VS User</p>
+            </div>
+        </a>
+        <a class="3" href="pages/4X4.html">
+            <div class="compvsuser">
+                <img class="comp4x4" src="images/4x4.webp" alt="4 X 4">
+                <p> 4X4 Computer VS User</p>
             </div>
         </a>
         
