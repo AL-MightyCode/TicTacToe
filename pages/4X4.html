@@ -86,41 +86,83 @@
         .hide {
             display: none;
         }
+
+        /* Responsive Layout for Images */
+        .game-options {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .game-options a {
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .game-options div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 3px solid gray;
+            border-radius: 10px;
+            padding: 15px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .game-options div:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .game-options img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .game-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            .game-options a {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
+    <a href="https://www.instagram.com/m_u_s_h_e_e_r_/" target="_blank">
+        <img class="insta" src="images/insta.jpg" alt="@m_u_s_h_e_e_r_">
+    </a>
     <main>
-        <div class="win2 hide">
-            <p class="cong">Congratulations!</p>
-            <p class="winner"></p>
-            <button class="ng">New Game</button>
+        <h1>Choose Game Mode</h1>
+        <div class="game-options">
+            <a href="pages/indexuser.html">
+                <div>
+                    <img src="images/user.png" alt="User vs User">
+                    <p>User VS User</p>
+                </div>
+            </a>
+            <a href="pages/indexcomp.html">
+                <div>
+                    <img src="images/computer.png" alt="Computer vs User">
+                    <p>Computer VS User</p>
+                </div>
+            </a>
+            <a href="pages/4X4.html">
+                <div>
+                    <img src="images/4x4.webp" alt="4X4">
+                    <p>4X4 Computer VS User</p>
+                </div>
+            </a>
         </div>
-        <h1>4x4 Tic Tac Toe</h1>
-        <div class="container">
-            <div class="game">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-            </div>
-            <button class="reset">Reset</button>
-        </div>
-        <script src="../4x4.js"></script>
     </main>
 </body>
 </html>
