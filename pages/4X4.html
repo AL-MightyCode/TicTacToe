@@ -23,8 +23,8 @@
         }
 
         .container {
-            width: 90vw;
-            max-width: 450px;
+            width: 95vw;
+            max-width: 500px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -32,59 +32,60 @@
 
         .game {
             display: grid;
-            grid-template-columns: repeat(4, minmax(50px, 1fr));
-            gap: 5px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
             justify-content: center;
             align-items: center;
-            max-width: 90vw;
+            max-width: 95vw;
         }
 
         .box {
             box-shadow: 0 0 5px;
             border-radius: 10px;
-            font-size: clamp(16px, 5vw, 40px);
-            height: clamp(50px, 12vw, 100px);
-            width: clamp(50px, 12vw, 100px);
+            font-size: clamp(20px, 8vw, 50px);
+            height: clamp(60px, 15vw, 120px);
+            width: clamp(60px, 15vw, 120px);
             cursor: pointer;
             color: red;
             background-color: lightgoldenrodyellow;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 50px;
-            min-height: 50px;
+            min-width: 60px;
+            min-height: 60px;
+            font-weight: bold;
         }
 
         h1 {
             text-align: center;
-            font-size: clamp(20px, 6vw, 40px);
+            font-size: clamp(24px, 7vw, 45px);
         }
 
         .reset, .ng {
-            padding: 10px 15px;
-            border-radius: 10px;
+            padding: 12px 18px;
+            border-radius: 12px;
             border: 0;
             background-color: green;
             color: white;
-            font-size: clamp(14px, 4vw, 20px);
+            font-size: clamp(16px, 5vw, 22px);
             cursor: pointer;
             margin-top: 20px;
-            min-width: 120px;
+            min-width: 140px;
             text-align: center;
         }
 
         .win2 {
             height: auto;
-            padding: 20px;
+            padding: 24px;
             background-color: darkblue;
             border-radius: 20px;
             text-align: center;
-            width: 90%;
-            max-width: 400px;
+            width: 95%;
+            max-width: 420px;
         }
 
         .winner, .cong {
-            font-size: clamp(20px, 6vw, 50px);
+            font-size: clamp(22px, 7vw, 55px);
             color: orange;
             font-weight: bold;
         }
@@ -130,3 +131,4 @@
     </main>
 </body>
 </html>
+
